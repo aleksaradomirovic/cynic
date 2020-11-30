@@ -1,0 +1,91 @@
+feudal_governments = {
+	imperial_government = {
+		preferred_holdings = { CASTLE }
+		allowed_holdings = { CASTLE CITY FORT HOSPITAL }
+		accepts_liege_governments = {
+			republic_government
+			chinese_imperial_government
+		}
+		free_revoke_on_tiers = {
+			DUKE COUNT
+		}
+		forced_contract = {
+			imperial_government
+		}
+		allowed_holdings_culture = { # Will not get the wrong government type penalty for tribes of the same culture
+			TRIBAL
+		}
+		title_prefix = "imperial_"
+		frame_suffix = "_romanimperial"
+		potential = {
+			OR = {
+				primary_title = {
+					OR = {
+						title = e_byzantium
+						title = e_roman_empire
+					}
+				}
+				AND = {
+					OR = {
+						tier = DUKE
+						AND = {
+							tier = KING
+							OR = {
+								culture_group = byzantine
+								culture = roman
+							}
+						}
+					}
+					liege = {
+						NOT = { character = ROOT }
+						NOT = { ROOT = { any_suzerain = { character = PREV } } }
+						OR = {
+							primary_title = {
+								OR = {
+									title = e_byzantium
+									title = e_roman_empire
+								}
+							}
+							government = imperial_government
+						}
+					}
+				}
+				AND = {
+					lower_real_tier_than = KING
+					liege = {
+						primary_title = {
+							OR = {
+								title = e_byzantium
+								title = e_roman_empire
+							}
+						}
+					}
+				}
+			}
+			is_patrician = no
+		}
+		
+		color = { 143 12 125 }
+		
+		barons_need_dynasty = no
+
+		can_build_tribal = no
+		
+		ignore_in_vassal_limit_calculation = {
+			tribal_government
+		}
+		capital_move_delay = 2000
+		
+		can_usurp_kingdoms_and_empires = no
+		can_imprison_without_reason = no
+		can_create_empires = no
+		vassal_government_opinion_penalties = no
+		can_grant_kingdoms_and_empires_to_other_government_group = yes
+		can_be_granted_kingdoms_and_empires_by_other_government = no
+		free_retract_vassalage = yes
+		
+		## Modifiers
+		court_size_modifier = 15
+		demesne_size = 2
+	}
+}

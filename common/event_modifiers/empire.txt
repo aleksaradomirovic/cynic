@@ -1,0 +1,47 @@
+imperial_govt_0 = {
+	global_levy_size = -0.5
+	global_tax_modifier = -0.4
+	vassal_opinion = -25
+	castle_vassal_max_levy = -0.6
+	
+	icon = 28
+}
+
+imperial_govt_1 = { #decline & ^
+	global_levy_size = -0.25
+	global_tax_modifier = -0.1
+	vassal_opinion = -15
+	castle_vassal_max_levy = -0.4
+	
+	icon = 28
+}
+
+imperial_govt_2 = { #mid-tier
+	global_levy_size = -0.1
+	global_tax_modifier = 0.15
+	vassal_opinion = -10
+	castle_vassal_max_levy = -0.2
+	
+	icon = 10
+}
+
+imperial_govt_3 = { #nominal
+	global_levy_size = 0
+	global_tax_modifier = 0.2
+	
+	icon = 10
+}
+
+imperial_govt_4 = { #martial
+	global_levy_size = 0.2
+	global_tax_modifier = -0.05
+	
+	icon = 1
+}
+
+imperial_govt_5 = { #maurice mode
+	global_levy_size = 0.4
+	global_tax_modifier = -0.25
+	
+	icon = 1
+}

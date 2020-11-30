@@ -1,0 +1,276 @@
+namespace = cyndebug
+character_event = {
+	id = cyndebug.1
+	
+	is_triggered_only = yes
+	hide_window = yes
+	
+	ai = no
+	
+	immediate = {
+		any_province = {
+			remove_province_modifier = pop_depopulated
+			remove_province_modifier = pop_barren
+			remove_province_modifier = pop_sparse
+			remove_province_modifier = pop_settled
+			remove_province_modifier = pop_dense
+			remove_province_modifier = pop_urban
+			remove_province_modifier = pop_metropolis
+		
+		
+			set_variable = { which = popscore value = 0 }
+			export_to_variable = { which = popscore value = num_of_max_settlements }
+			
+			# climate
+			if = {
+				limit = {
+					climate = normal_winter
+				}
+				change_variable = { which = popscore value = 1 }
+			} else_if = {
+				limit = {
+					climate = mild_winter
+				}
+				change_variable = { which = popscore value = 2 }
+			} else_if = {
+				limit = {
+					climate = severe_winter
+				}
+				change_variable = { which = popscore value = 0 }
+			} else = {
+				change_variable = { which = popscore value = 4 }
+			}
+			
+			# terrain
+			if = {
+				limit = {
+					OR = {
+						terrain = forest
+						terrain = steppe
+						terrain = mountain
+					}
+				}
+				change_variable = { which = popscore value = 1 }
+			} else_if = {
+				limit = {
+					OR = {
+						terrain = hills
+						terrain = plains
+						terrain = jungle
+					}
+				}
+				change_variable = { which = popscore value = 2 }
+			} else_if = {
+				limit = {
+					OR = {
+						terrain = farmlands
+					}
+				}
+				change_variable = { which = popscore value = 4 }
+			} else_if = {
+				OR = {
+					terrain = desert
+					terrain = arctic
+				}
+				OR = {
+					culture = maghreb_arabic
+					NOT = { culture_group = arabic }
+				}
+				subtract_variable = { which = popscore value = 2 }
+			}
+			
+			#location
+			if = {
+				limit = {
+					port = yes
+				}
+				change_variable = { which = popscore value = 2 }
+			}
+			if = {
+				limit = {
+					OR = {
+						culture_group = byzantine
+						culture_group = indo_aryan_group
+						culture_group = iranian
+						culture_group = arabic
+						NOT = { culture = maghreb_arabic }
+					}
+				}
+				change_variable = { which = popscore value = 2 }
+			} else_if = {
+				limit = {
+					OR = {
+						culture_group = north_germanic
+						culture_group = finno_ugric
+					}
+				}
+				subtract_variable = { which = popscore value = 1 }
+			}
+			
+			
+			if = {
+				limit = {
+					OR = {
+						check_variable = { which = popscore value >= 19 }
+						trigger_if = {
+							limit = {
+								OR = {
+									emf_trigger = yes
+									not_emf_trigger = yes
+								}
+								
+								OR = {
+									province = 1248
+									province = 7764
+									province = 9791
+									province = 10268
+								}
+							}
+						} trigger_else = {
+							OR = {
+								province = 496
+								province = 693
+								province = 181
+								province = 802
+							}
+						}
+					}
+				}
+				add_province_modifier = { name = pop_metropolis duration = -1 }
+			} else_if = {
+				limit = {
+					check_variable = { which = popscore value >= 11 }
+				}
+				add_province_modifier = { name = pop_urban duration = -1 }
+			} else_if = {
+				limit = {
+					check_variable = { which = popscore value >= 9 }
+				}
+				add_province_modifier = { name = pop_dense duration = -1 }
+			} else_if = {
+				limit = {
+					check_variable = { which = popscore value >= 6 }
+				}
+				add_province_modifier = { name = pop_settled duration = -1 }
+			} else_if = {
+				limit = {
+					check_variable = { which = popscore value >= 4 }
+				}
+				add_province_modifier = { name = pop_sparse duration = -1 }
+			} else_if = {
+				limit = {
+					check_variable = { which = popscore value >= 2 }
+				}
+				add_province_modifier = { name = pop_barren duration = -1 }
+			} else = {
+				add_province_modifier = { name = pop_depopulated duration = -1 }
+			}
+		}
+	}
+	
+	option = {
+		name = OK
+	}
+}
+
+character_event = {
+	id = cyndebug.2
+	
+	is_triggered_only = yes
+	hide_window = yes
+	
+	immediate = {
+		e_byzantium = {
+				
+			if = {
+				limit = { year <= 602 }
+				set_variable = { which = imperial_govt value = 5 }
+			} else_if = {
+				limit = { year < 980 }
+				set_variable = { which = imperial_govt value = 3 }
+			} else_if = {
+				limit = { year <= 1025 }
+				set_variable = { which = imperial_govt value = 4 }
+			} else_if = {
+				limit = { year < 1060 }
+				set_variable = { which = imperial_govt value = 2 }
+			} else_if = {
+				limit = { year < 1081 }
+				set_variable = { which = imperial_govt value = 1 }
+			} else_if = {
+				limit = { year < 1090 }
+				set_variable = { which = imperial_govt value = 2 }
+			} else_if = {
+				limit = { year < 1185 }
+				set_variable = { which = imperial_govt value = 4 }
+			} else_if = {
+				limit = { year < 1205 }
+				set_variable = { which = imperial_govt value = 2 }
+			} else = {
+				set_variable = { which = imperial_govt value = 1 }
+			}
+			
+			owner = { character_event = { id = cyndebug.3 } }
+		}
+	}
+	
+	option = {
+		name = OK
+	}
+}
+
+character_event = { #still gotta fix some extraneous changes (vassalization streamlining etc)
+	id = cyndebug.3
+	
+	is_triggered_only = yes
+	hide_window = yes
+	
+	trigger = {
+		government = imperial_government
+		tier = EMPEROR
+	}
+	
+	immediate = {
+		FROMFROM = {
+			remove_character_modifier = imperial_govt_0
+			remove_character_modifier = imperial_govt_1
+			remove_character_modifier = imperial_govt_2
+			remove_character_modifier = imperial_govt_3
+			remove_character_modifier = imperial_govt_4
+			remove_character_modifier = imperial_govt_5
+		}
+		ROOT = {
+			remove_character_modifier = imperial_govt_0
+			remove_character_modifier = imperial_govt_1
+			remove_character_modifier = imperial_govt_2
+			remove_character_modifier = imperial_govt_3
+			remove_character_modifier = imperial_govt_4
+			remove_character_modifier = imperial_govt_5
+		}
+		ROOT = {
+			if = {
+				limit = { primary_title = { check_variable = { which = imperial_govt value <= 0 } } }
+				add_character_modifier = { name = imperial_govt_0 duration = -1 }
+			} else_if = {
+				limit = { primary_title = { check_variable = { which = imperial_govt value == 1 } } }
+				add_character_modifier = { name = imperial_govt_1 duration = -1 }
+			} else_if = {
+				limit = { primary_title = { check_variable = { which = imperial_govt value == 2 } } }
+				add_character_modifier = { name = imperial_govt_2 duration = -1 }
+			} else_if = {
+				limit = { primary_title = { check_variable = { which = imperial_govt value == 3 } } }
+				add_character_modifier = { name = imperial_govt_3 duration = -1 }
+			} else_if = {
+				limit = { primary_title = { check_variable = { which = imperial_govt value == 4 } } }
+				add_character_modifier = { name = imperial_govt_4 duration = -1 }
+			} else_if = {
+				limit = { primary_title = { check_variable = { which = imperial_govt value >= 5 } } }
+				add_character_modifier = { name = imperial_govt_5 duration = -1 }
+			}
+		}
+	}
+	
+	option = {
+		name = OK
+	}
+}

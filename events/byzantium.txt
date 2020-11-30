@@ -1,0 +1,84 @@
+namespace = cyn_byzantium
+character_event = { #meeting basileius
+	id = cyn_byzantium.1
+	desc = cyn_meeting_emperor_first_time
+	picture = GFX_evt_hagia_sofia
+	border = GFX_event_normal_frame_diplomacy
+	portrait = event_target:liege_basileius
+	
+	ai = no
+	capable_only = yes
+	war = no
+	prisoner = no
+	
+	mean_time_to_happen = {
+		months = 1
+		modifier = {
+			factor = 4
+			trait = shy
+		}
+		modifier = {
+			factor = 0.5
+			trait = gregarious
+		}
+	}
+	
+	trigger = {
+		always = no
+		liege = {
+			is_incapable = no
+			independent = yes
+			government = imperial_government
+		}
+		primary_title = { ruled_years <= 5 }
+		NOT = { has_character_flag = cyn_met_basileius }
+	}
+	
+	immediate = {
+		set_character_flag = cyn_met_basileius
+		liege = {
+			save_event_target_as = liege_basileius
+		}
+	}
+	
+	option = { #nice
+		name = cyn_meeting_emperor_nice
+		custom_tooltip = {
+			text = cyn_meeting_emperor_nice_tip
+		}
+		prestige = 10
+	}
+	
+	option = { #funny
+		name = cyn_meeting_emperor_funny
+		trigger = {
+			OR = {
+				diplomacy = 10
+				trait = gregarious
+			}
+		}
+		custom_tooltip = {
+			text = cyn_meeting_emperor_funny_tip
+		}
+		reverse_opinion = {
+			modifier = opinion_liked_a_good_joke
+			who = event_target:liege_basileius
+		}
+	}
+	
+	option = { #hi
+		name = cyn_meeting_emperor_hello
+	}
+	
+	option = { #callous
+		name = cyn_meeting_emperor_callous
+		custom_tooltip = {
+			text = cyn_meeting_emperor_callous_tip
+		}
+		reverse_opinion = {
+			modifier = opinion_dislike
+			who = event_target:liege_basileius
+			months = 6
+		}
+	}
+}

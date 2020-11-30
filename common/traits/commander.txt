@@ -1,0 +1,49 @@
+commander1 = {
+	customizer = no
+	leader = yes
+	
+	martial = 1
+	land_morale = 0.1
+	
+	combat_rating = 5
+}
+
+commander2 = {
+	customizer = no
+	leader = yes
+	
+	martial = 2
+	land_morale = 0.2
+	levy_size = 0.1
+	
+	combat_rating = 10
+	sex_appeal_opinion = 5
+}
+
+commander3 = {
+	customizer = no
+	leader = yes
+	
+	martial = 4
+	land_morale = 0.5
+	levy_size = 0.2
+	
+	combat_rating = 15
+	general_opinion = 5
+	sex_appeal_opinion = 10
+}
+
+commander4 = {
+	customizer = no
+	leader = yes
+	
+	martial = 6
+	land_morale = 1
+	levy_size = 0.5
+	
+	combat_rating = 20
+	
+	general_opinion = 10
+	same_opinion = 30
+	sex_appeal_opinion = 10
+}

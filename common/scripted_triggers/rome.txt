@@ -1,0 +1,18 @@
+CYN_byzantine_dejure = {
+	OR = {
+		de_jure_liege_or_above = e_byzantium
+		de_jure_liege_or_above = e_italy
+		de_jure_liege_or_above = e_spain
+		de_jure_liege_or_above = e_maghreb
+		
+		de_jure_liege_or_above = k_syria
+		de_jure_liege_or_above = k_jerusalem
+		de_jure_liege_or_above = k_egypt
+		de_jure_liege_or_above = k_armenia
+		de_jure_liege_or_above = k_carinthia
+		de_jure_liege_or_above = k_serbia
+		de_jure_liege_or_above = k_bulgaria
+		de_jure_liege_or_above = k_croatia
+		de_jure_liege_or_above = k_bosnia
+	}
+}

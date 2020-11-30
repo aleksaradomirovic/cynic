@@ -1,0 +1,110 @@
+decisions = {
+	byz_fix_bureaucracy = {
+		is_high_prio = yes
+		ai_check_interval = 60
+		
+		potential = {
+			is_incapable = no
+			government = imperial_government
+			primary_title = { check_variable = { which = imperial_govt value <= 1 } }
+		}
+		
+		allow = {
+			trigger_if = {
+				limit = { stewardship = 16 }
+				prestige = 1500
+			} trigger_else = { prestige = 2000 }
+			realm_size > 75
+		}
+		
+		effect = {
+			custom_tooltip = {
+				text = cyn_fix_bureaucracy
+				primary_title = { set_variable = { which = imperial_govt value = 2 } }
+				character_event = { id = cyndebug.3 }
+			}
+			
+			prestige = -1000
+		}
+		
+		ai_will_do = {
+			factor = 0.25
+			modifier = {
+				factor = 2
+				stewardship = 16
+			}
+			modifier = {
+				factor = 1.25
+				realm_size > 100
+			}
+			modifier = {
+				factor = 1.25
+				realm_size > 150
+			}
+		}
+	}
+	
+	byz_mobilize = {
+		is_high_prio = yes
+		ai_check_interval = 60
+		
+		potential = {
+			is_incapable = no
+			government = imperial_government
+			primary_title = { check_variable = { which = imperial_govt value >= 2 } }
+			primary_title = { check_variable = { which = imperial_govt value < 5 } }
+			NOT = { has_character_flag = cyn_reorganized_imperial_govt }
+		}
+		
+		allow = {
+			trigger_if = {
+				limit = { stewardship = 16 }
+				prestige = 1000
+			} trigger_else = { prestige = 2000 }
+			trigger_if = {
+				limit = { primary_title = { check_variable = { which = imperial_govt value == 2 } } }
+				realm_size > 125
+			} trigger_else_if = {
+				limit = { primary_title = { check_variable = { which = imperial_govt value == 3 } } }
+				realm_size > 225
+				martial = 15
+			} trigger_else_if = {
+				limit = { primary_title = { check_variable = { which = imperial_govt value == 4 } } }
+				realm_size > 425
+				martial = 20
+				trigger_if = { limit = { stewardship < 12 } stewardship = 12 }
+			}
+		}
+		
+		effect = {
+			custom_tooltip = {
+				text = cyn_imperial_mobilize
+				primary_title = { change_variable = { which = imperial_govt value = 1 } }
+				character_event = { id = cyndebug.3 }
+				set_character_flag = cyn_reorganized_imperial_govt
+			}
+			
+			prestige = 500
+		}
+		
+		ai_will_do = {
+			factor = 0.1
+			modifier = {
+				factor = 2
+				at_war = yes
+			}
+			modifier = {
+				factor = 2
+				martial = 15
+			}
+			modifier = {
+				factor = 2
+				stewardship = 15
+			}
+			modifier = {
+				factor = 2
+				martial = 25
+			}
+		}
+	}
+}

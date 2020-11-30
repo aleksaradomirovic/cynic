@@ -1,0 +1,58 @@
+title_cyn_symbasileus;Symbasileus;;;;;;;;;;;;;x
+title_cyn_symbasileus_desc;Symbasileus of Byzantium.;;;;;;;;;;;;;x
+BYZ_RECONQUEST;Byzantine Reconquest of [Title.GetBaseName];;;;;;;;;;;;;x
+BYZ_RECONQUEST_WAR;$ORDER$$FIRST_ADJ$ Reconquest of $OTHER_TITLE$;;;;;;;;;;;;;x
+
+k_nicaea;Nicaea;;;;;;;;;;;;;x
+k_nicaea_adj;Nicene;;;;;;;;;;;;;x
+k_cyprus;Cyprus;;;;;;;;;;;;;x
+k_cyprus_adj;Cypriot;;;;;;;;;;;;;x
+k_armenia_minor;Cilicia;;;;;;;;;;;;;x
+k_armenia_minor_adj;Cilician;;;;;;;;;;;;;x
+CYN_EMPIRE_OF;Empire of;;;;;;;;;;;;;x
+
+cyn_vote_symbasileus;[From.GetSheHeCap] is already a Symbasileus;;;;;;;;;;;;;x
+cyn_vote_not_commander;[From.GetSheHeCap] is unknown on the field of battle;;;;;;;;;;;;;x
+cyn_vote_commander1;[From.GetSheHeCap] is a known battle commander;;;;;;;;;;;;;x
+cyn_vote_commander2;[From.GetSheHeCap] is a proven battle commander;;;;;;;;;;;;;x
+cyn_vote_commander3;[From.GetSheHeCap] is a respected commander;;;;;;;;;;;;;x
+cyn_vote_commander4;[From.GetSheHeCap] is a legendary general;;;;;;;;;;;;;x
+
+imperial_duke;Strategos;;;;;;;;;;;;;x
+imperial_duchy_of;Theme of;;;;;;;;;;;;;x
+imperial_king_greek;Catepan;;;;;;;;;;;;;x
+imperial_kingdom_of_greek;Catepanate of;;;;;;;;;;;;;x
+imperial_duke_serbian;Župan;;;;;;;;;;;;;x
+
+imperial_government;Byzantine Imperial;;;;;;;;;;;;;x
+imperial_government_desc;The complex bureaucracy in the governing apparatus of the Byzantine Empire is a direct descendant of the Roman republican-imperial government. Despite being semi-feudal, the state is much more centralized than in most feudal governments, allowing for a more stable state and government.;;;;;;;;;;;;;x
+
+cyn_meeting_emperor_first_time;Here you are, at the [liege_basileius.GetTitle]'s behest. You are observing the area around [liege_basileius.Capital.GetName] when you are approached by a noble. [liege_basileius.GetSheHeCap] says, "Welcome, [Root.GetTitle] [Root.GetFirstName] - to [liege_basileius.Capital.GetName]!";;;;;;;;;;;;;x
+cyn_meeting_emperor_nice;Quite a beautiful place you have here!;;;;;;;;;;;;;x
+cyn_meeting_emperor_nice_tip;[Root.GetFirstName] responds nicely;;;;;;;;;;;;;x
+cyn_meeting_emperor_funny;Love the hat, my liege!;;;;;;;;;;;;;x
+cyn_meeting_emperor_funny_tip;[Root.GetFirstName] makes a joke about [liege_basileius.GetFirstName]'s crown;;;;;;;;;;;;;x
+cyn_meeting_emperor_hello;Hello!;;;;;;;;;;;;;x
+cyn_meeting_emperor_callous;Let's get this over with.;;;;;;;;;;;;;x
+cyn_meeting_emperor_callous_tip;[Root.GetFirstName] responds coldly to the [liege_basileius.GetTitle];;;;;;;;;;;;;x
+cyn_meet_emperor_council;You and [liege_basileius.GetTitle] [liege_basileius.GetFirstName] spend most of the day discussing matters of your service as [Root.GetTitle], ending with you meeting the imperial council. After the [liege_basileius.GetTitle] deems the meeting concluded, [liege_basileius.GetSheHe] turns to you. "[liege_basileius.Capital.GetName] is full of a great many things to do. Take the rest of the day to enjoy it.";;;;;;;;;;;;;x
+cyn_meet_emperor_hippodrome_dec;I'll go to the Hippodrome!;;;;;;;;;;;;;x
+cyn_meet_emperor_tavern_dec;I'll just go get a drink somewhere.;;;;;;;;;;;;;x
+cyn_meet_emperor_barracks_dec;Where are the training grounds?;;;;;;;;;;;;;x
+cyn_meet_emperor_straight_to_quarters_dec;If you could just show me to my quarters, please.;;;;;;;;;;;;;x
+cyn_meet_emperor_hippodrome;You spend your day watching the races at the hippodrome. You can't imagine what it'd be like, to ride in that speed in a chariot drawn by such fast horses. One would think the human body couldn't take such speeds.;;;;;;;;;;;;;x
+cyn_meet_emperor_tavern;You spend the evening in a large tavern. Happy voices, singing, and interesting conversation fill your ears for hours as you listen to the words of strangers. Stories from far away lands make it here. Now you understand why [liege_basileius.Capital.GetName] is called a place of culture.;;;;;;;;;;;;;x
+cyn_meet_emperor_barracks;You head over to the barracks and strike up conversations with the [liege_basileius.GetTitle]'s lower officers. They even invited you to spar for a bit, and taught you a few things you wouldn't have otherwise known.;;;;;;;;;;;;;x
+cyn_meet_emperor_headhome;I'd better head to my quarters...;;;;;;;;;;;;;x
+
+cyn_meet_emperor_quarters;As you head to the quarters that the [liege_basileius.GetTitle] had prepared for you, a figure crosses the corridor in front of you. You're curious as to who it might be.;;;;;;;;;;;;;x
+cyn_meet_emperor_whoisthat;Who is that?;;;;;;;;;;;;;x
+cyn_meet_emperor_dcsleep;Whoever it is, I'm too tired to chase them;;;;;;;;;;;;;x
+cyn_meet_emperor_quarters_courtier;You follow [court_interest.GetHerHim] down the hallway. You ask who [court_interest.GetSheHe] might me. "I'm [court_interest.GetFirstName]," [court_interest.GetSheHe] says. You strike up a bit of a conversation.;;;;;;;;;;;;;x
+cyn_meet_emperor_courtier_life;Talk about life;;;;;;;;;;;;;x
+cyn_meet_emperor_courtier_love;Talk about love;;;;;;;;;;;;;x
+cyn_meet_emperor_courtier_brains;Talk philosophically;;;;;;;;;;;;;x
+cyn_meet_emperor_courtier_gn;"Goodnight.";;;;;;;;;;;;;x
+
+cyn_fix_bureaucracy;The condition of the government is improved;;;;;;;;;;;;;x
+cyn_imperial_mobilize;The bureaucracy is reorganized to support larger armies;;;;;;;;;;;;;x

@@ -1,0 +1,34 @@
+on_chronicle_start = {
+	effect = {
+		if = {
+			limit = {
+				year > 1054
+			}
+			set_global_flag	= cyn_great_schism
+		}
+	}
+
+	events = {
+		cyndebug.1
+		cyndebug.2
+	}
+}
+
+on_startup = {
+	events = {
+		
+		#cyndebug.1
+	}
+}
+
+on_decade_pulse = {
+	events = {
+		cyndebug.1
+	}
+}
+
+on_new_holder = {
+	events = {
+		cyndebug.3
+	}
+}
