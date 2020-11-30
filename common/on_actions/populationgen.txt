@@ -26,9 +26,3 @@ on_decade_pulse = {
 		cyndebug.1
 	}
 }
-
-on_new_holder = {
-	events = {
-		cyndebug.3
-	}
-}
